@@ -5,7 +5,7 @@ import {
   NavbarLeft,
   NavbarRight,
 } from "../../ui/navbar";
-import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../../ui/sheet";
 import { Menu } from "lucide-react";
 import LaunchUI from "../../logos/launch-ui";
 import { siteConfig } from "@/config/site";
@@ -22,7 +22,7 @@ export default function Navbar() {
               className="flex items-center gap-2 text-xl font-bold"
             >
               <LaunchUI />
-              Launch UI
+              AICare
             </a>
             <Navigation />
           </NavbarLeft>
@@ -44,6 +44,7 @@ export default function Navbar() {
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
+              <SheetTitle>
               <SheetContent side="right">
                 <nav className="grid gap-6 text-lg font-medium">
                   <a
@@ -72,6 +73,7 @@ export default function Navbar() {
                   </a>
                 </nav>
               </SheetContent>
+              </SheetTitle>
             </Sheet>
           </NavbarRight>
         </NavbarComponent>

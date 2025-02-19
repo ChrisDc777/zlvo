@@ -1,12 +1,12 @@
 import {
-  BlocksIcon,
-  EclipseIcon,
-  FastForwardIcon,
-  LanguagesIcon,
-  MonitorSmartphoneIcon,
-  RocketIcon,
-  ScanFaceIcon,
-  SquarePenIcon,
+  HeartIcon,
+  MicIcon,
+  MessageSquareIcon,
+  UserIcon,
+  CalendarIcon,
+  ShieldIcon,
+  ActivityIcon,
+  CloudIcon,
 } from "lucide-react";
 import { Item, ItemIcon, ItemTitle, ItemDescription } from "../../ui/item";
 import { Section } from "../../ui/section";
@@ -16,95 +16,95 @@ export default function Items() {
     <Section>
       <div className="mx-auto flex max-w-container flex-col items-center gap-6 sm:gap-20">
         <h2 className="max-w-[560px] text-center text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
-          Everything you need. Nothing you don&apos;t.
+          Everything your health chatbot needs to keep you healthy.
         </h2>
         <div className="grid auto-rows-fr grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
-                <ScanFaceIcon className="h-5 w-5 stroke-1" />
+                <UserIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Accessibility first
+              Personalized Health Assistance
             </ItemTitle>
             <ItemDescription>
-              Fully WCAG 2.0 compliant, made with best a11y practices
+              Get tailored advice based on your symptoms and medical history
             </ItemDescription>
           </Item>
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
-                <MonitorSmartphoneIcon className="h-5 w-5 stroke-1" />
+                <MicIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Responsive design
+              Voice Interaction
             </ItemTitle>
             <ItemDescription>
-              Looks and works great on any device and screen size
+              Talk to your AI chatbot for hands-free and interactive health support
             </ItemDescription>
           </Item>
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
-                <EclipseIcon className="h-5 w-5 stroke-1" />
+                <HeartIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Light and dark mode
+              Real-time Health Monitoring
             </ItemTitle>
             <ItemDescription>
-              Seamless switching between color schemes, 6 themes included
+              Track vital signs and health metrics in real-time for immediate advice
             </ItemDescription>
           </Item>
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
-                <BlocksIcon className="h-5 w-5 stroke-1" />
+                <MessageSquareIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Easy to customize
+              Instant Support
             </ItemTitle>
             <ItemDescription>
-              Flexible options to match your product or brand
+              Get instant replies and personalized suggestions at any time of the day
             </ItemDescription>
           </Item>
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
-                <FastForwardIcon className="h-5 w-5 stroke-1" />
+                <CalendarIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Top-level performance
+              Health Reminders
             </ItemTitle>
             <ItemDescription>
-              Made for lightning-fast load times and smooth interactions
+              Set reminders for medications, appointments, and healthy habits
             </ItemDescription>
           </Item>
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
-                <RocketIcon className="h-5 w-5 stroke-1" />
+                <ShieldIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Production ready
+              Privacy & Security
             </ItemTitle>
             <ItemDescription>
-              Thoroughly tested and launch-prepared
+              All your health data is stored securely and with utmost privacy
             </ItemDescription>
           </Item>
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
-                <LanguagesIcon className="h-5 w-5 stroke-1" />
+                <ActivityIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Made for localisation
+              Exercise Recommendations
             </ItemTitle>
             <ItemDescription>
-              Easy to implement support for multiple languages and regions
+              Get workout routines based on your fitness level and health goals
             </ItemDescription>
           </Item>
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
-                <SquarePenIcon className="h-5 w-5 stroke-1" />
+                <CloudIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              CMS friendly
+              Cloud-based Sync
             </ItemTitle>
             <ItemDescription>
-              Built to work with your any headless content management system
+              Sync your health data across devices for continuous monitoring and advice
             </ItemDescription>
           </Item>
         </div>

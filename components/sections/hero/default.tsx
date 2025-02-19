@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
           <Badge variant="outline" className="animate-appear">
             <span className="text-muted-foreground">
-              New version of Launch UI is out!
+              New AI-powered Health Assistant is live!
             </span>
             <a
               href={siteConfig.getStartedUrl}
@@ -44,16 +44,16 @@ export default function Hero() {
             </a>
           </Badge>
           <h1 className="relative z-10 inline-block animate-appear bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-4xl font-semibold leading-tight text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight">
-            Give your big idea the website it deserves
+            Transform the way you care for your health with AI
           </h1>
           <p className="text-md relative z-10 max-w-[550px] animate-appear font-medium text-muted-foreground opacity-0 delay-100 sm:text-xl">
-            Landing page components built with React, Shadcn/ui and Tailwind
-            that will make your website feel premium.
+            Empower yourself with personalized health insights, symptom
+            checking, and expert recommendations—all at your fingertips.
           </p>
           <div className="relative z-10 flex animate-appear justify-center gap-4 opacity-0 delay-300">
             <div className="relative z-10 flex animate-appear justify-center gap-4 opacity-0 delay-300">
               <Button variant="default" size="lg" asChild>
-                <a href={siteConfig.getStartedUrl}>Get Started</a>
+                <a href={siteConfig.getStartedUrl}>Start Your Health Journey</a>
               </Button>
               <Button variant="glow" size="lg" asChild>
                 <a href={siteConfig.links.github}>
@@ -70,7 +70,7 @@ export default function Hero() {
               <Mockup type="responsive">
                 <Image
                   src={src}
-                  alt="Launch UI app screenshot"
+                  alt="AI Health Assistant app screenshot"
                   width={1248}
                   height={765}
                 />

@@ -4,7 +4,7 @@ import * as React from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { cva, type VariantProps } from "class-variance-authority";
-
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { cn } from "@/lib/utils";
 
 const Sheet = SheetPrimitive.Root;
@@ -68,6 +68,17 @@ const SheetContent = React.forwardRef<
         <Cross2Icon className="h-5 w-5" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
+      {/* Add SheetTitle here for accessibility */}
+      <VisuallyHidden>
+        <SheetPrimitive.Title className="sr-only">
+          Accessible Sheet Title
+        </SheetPrimitive.Title>
+      </VisuallyHidden>
+
+      {/* Add a SheetDescription for accessibility */}
+      <SheetPrimitive.Description className="sr-only">
+        This is a detailed description of the content in the sheet dialog.
+      </SheetPrimitive.Description>
       {children}
     </SheetPrimitive.Content>
   </SheetPortal>

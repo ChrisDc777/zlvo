@@ -11,7 +11,7 @@ export default function Stats() {
               {siteConfig.stats.figma}
             </div>
             <div className="mt-2 text-sm text-muted-foreground">
-              Figma users
+              Active users
             </div>
           </div>
           <div className="text-center">
@@ -19,7 +19,7 @@ export default function Stats() {
               {siteConfig.stats.github}
             </div>
             <div className="mt-2 text-sm text-muted-foreground">
-              Github clones
+              Symptoms checked
             </div>
           </div>
           <div className="text-center">
@@ -27,14 +27,14 @@ export default function Stats() {
               {siteConfig.stats.cli}
             </div>
             <div className="mt-2 text-sm text-muted-foreground">
-              CLI installations
+              Health tips provided
             </div>
           </div>
           <div className="text-center">
             <div className="bg-gradient-to-r from-foreground to-muted-foreground/40 bg-clip-text text-4xl font-semibold text-transparent drop-shadow-[1px_1px_1px_hsl(var(--brand-foreground))] hover:to-muted-foreground hover:drop-shadow-[2px_1px_2px_hsl(var(--brand-foreground))] sm:text-5xl md:text-6xl">
               {siteConfig.stats.components}
             </div>
-            <div className="mt-2 text-sm text-muted-foreground">Components</div>
+            <div className="mt-2 text-sm text-muted-foreground">Chat sessions</div>
           </div>
         </div>
       </div>
