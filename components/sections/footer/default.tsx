@@ -10,7 +10,7 @@ import { siteConfig } from "@/config/site";
 
 export default function FooterSection() {
   return (
-    <footer className="w-full bg-background px-4">
+    <footer className="w-full px-4">
       <div className="mx-auto max-w-container">
         <Footer>
           <FooterContent>
@@ -79,7 +79,7 @@ export default function FooterSection() {
             </FooterColumn>
           </FooterContent>
           <FooterBottom>
-            <div>© 2025 Mikołaj Dobrucki. All rights reserved</div>
+            <div>© 2025 Chris Dcosta.</div>
             <div className="flex items-center gap-4">
               <a href={siteConfig.url}>Privacy Policy</a>
               <a href={siteConfig.url}>Terms of Service</a>

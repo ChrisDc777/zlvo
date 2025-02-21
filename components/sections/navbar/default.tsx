@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../../ui/sheet";
 import { Menu } from "lucide-react";
 import LaunchUI from "../../logos/launch-ui";
 import { siteConfig } from "@/config/site";
+import { GradientButton } from "@/components/ui/gradient-button";
 
 export default function Navbar() {
   return (
@@ -31,7 +32,9 @@ export default function Navbar() {
               Sign in
             </a>
             <Button variant="default" asChild>
-              <a href={siteConfig.url}>Get Started</a>
+              <GradientButton asChild>
+                <a href={siteConfig.url}>Get Started</a>
+              </GradientButton>
             </Button>
             <Sheet>
               <SheetTrigger asChild>
@@ -45,34 +48,35 @@ export default function Navbar() {
                 </Button>
               </SheetTrigger>
               <SheetTitle>
-              <SheetContent side="right">
-                <nav className="grid gap-6 text-lg font-medium">
-                  <a
-                    href={siteConfig.url}
-                    className="flex items-center gap-2 text-xl font-bold"
-                  >
-                    <span>Launch UI</span>
-                  </a>
-                  <a
-                    href={siteConfig.url}
-                    className="text-muted-foreground hover:text-foreground"
-                  >
-                    Getting Started
-                  </a>
-                  <a
-                    href={siteConfig.url}
-                    className="text-muted-foreground hover:text-foreground"
-                  >
-                    Components
-                  </a>
-                  <a
-                    href={siteConfig.url}
-                    className="text-muted-foreground hover:text-foreground"
-                  >
-                    Documentation
-                  </a>
-                </nav>
-              </SheetContent>
+                <SheetContent side="right">
+                  <nav className="grid gap-6 text-lg font-medium">
+                    <a
+                      href={siteConfig.url}
+                      className="flex items-center gap-2 text-xl font-bold"
+                    >
+                      <span>Launch UI</span>
+                    </a>
+
+                    <a
+                      href={siteConfig.url}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      Getting Started
+                    </a>
+                    <a
+                      href={siteConfig.url}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      Components
+                    </a>
+                    <a
+                      href={siteConfig.url}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      Documentation
+                    </a>
+                  </nav>
+                </SheetContent>
               </SheetTitle>
             </Sheet>
           </NavbarRight>

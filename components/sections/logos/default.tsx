@@ -7,6 +7,7 @@ import Logo from "../../ui/logo";
 import { Section } from "../../ui/section";
 import { Badge } from "../../ui/badge";
 import { siteConfig } from "@/config/site";
+import { GradientButton } from "@/components/ui/gradient-button";
 
 export default function Logos() {
   return (

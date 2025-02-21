@@ -7,6 +7,9 @@ import FAQ from "../components/sections/faq/default";
 import CTA from "../components/sections/cta/default";
 import Footer from "../components/sections/footer/default";
 import Pricing from "../components/sections/pricing/default";
+import { AuroraBackgroundDemo } from "@/components/aceternity/AuroraFooter";
+import { TextRevealCardPreview } from "@/components/aceternity/textReveal";
+import { LampDemo } from "@/components/aceternity/LampDemo";
 
 export default function Home() {
   return (
@@ -14,12 +17,19 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Stats />
+      <LampDemo/>
       <Logos />
       <Items />
+      
       {/* <Pricing /> */}
-      <FAQ />
+      {/* <TextRevealCardPreview /> */}
+      
       <CTA />
-      <Footer />
+      <FAQ />
+      
+      <AuroraBackgroundDemo />
+      {/* Lamp, Bento Grid */}
+      {/* <Footer /> */}
     </main>
   );
 }
