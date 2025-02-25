@@ -14,7 +14,7 @@ import { LampDemo } from "@/components/aceternity/LampDemo";
 export default function Home() {
   return (
     <main className="min-h-screen w-full overflow-hidden bg-background text-foreground">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Stats />
       <LampDemo/>

@@ -3,6 +3,9 @@ import "@/app/globals.css";
 import { inter } from "@/lib/fonts";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { siteConfig } from "../config/site";
+import Navbar from "@/components/sections/navbar/default";
+import { AuthProvider } from "./context/AuthProvider";
+import { ReactLenis } from "@/lib/lenis";
 
 export const metadata: Metadata = {
   title: {
@@ -61,11 +64,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const protectedRoutes = ["/protected", "/dashboard", "/settings"];
+
   return (
-    <html lang="en" style={{ colorScheme: "dark" }} className="light">
-      <body className={`${inter.className} bg-background antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
+    <AuthProvider>
+      <ReactLenis root>
+      <html lang="en" style={{ colorScheme: "dark" }} className="light">
+        <body className={`${inter.className} bg-background antialiased`}>
+          <Navbar />
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+      </ReactLenis>
+    </AuthProvider>
   );
 }

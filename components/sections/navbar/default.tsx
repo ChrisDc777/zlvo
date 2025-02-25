@@ -1,3 +1,4 @@
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import Navigation from "../../ui/navigation";
 import { Button } from "../../ui/button";
 import {
@@ -10,8 +11,25 @@ import { Menu } from "lucide-react";
 import LaunchUI from "../../logos/launch-ui";
 import { siteConfig } from "@/config/site";
 import { GradientButton } from "@/components/ui/gradient-button";
+import {
+  RegisterLink,
+  LoginLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-export default function Navbar() {
+export default async function Navbar() {
+  const { getUser, isAuthenticated } = getKindeServerSession();
+  const user = await getUser();
+
+  // const { isAuthenticated } = getKindeServerSession();
+  const isUserAuthenticated = await isAuthenticated();
+
   return (
     <header className="sticky top-0 z-50 -mb-4 px-4 pb-4">
       <div className="fade-bottom absolute left-0 h-24 w-full bg-background/15 backdrop-blur-lg"></div>
@@ -23,19 +41,39 @@ export default function Navbar() {
               className="flex items-center gap-2 text-xl font-bold"
             >
               <LaunchUI />
-              AICare
+              Togthr
             </a>
-            <Navigation />
+            <Navigation isAuthenticated={isUserAuthenticated} />
           </NavbarLeft>
           <NavbarRight>
-            <a href={siteConfig.url} className="hidden text-sm md:block">
-              Sign in
-            </a>
-            <Button variant="default" asChild>
-              <GradientButton asChild>
-                <a href={siteConfig.url}>Get Started</a>
-              </GradientButton>
-            </Button>
+            {isUserAuthenticated ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground"
+                  >
+                    {user?.given_name
+                      ? user.given_name.charAt(0).toUpperCase()
+                      : "?"}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem>
+                    <LogoutLink postLogoutRedirectURL="/" className="text-lg">Log Out</LogoutLink>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                <LoginLink postLoginRedirectURL="/dashboard" className="hidden text-md md:block">
+                  Sign in
+                </LoginLink>
+                <GradientButton variant="variant" asChild>
+                  <RegisterLink postLoginRedirectURL="/dashboard">Sign up</RegisterLink>
+                </GradientButton>
+              </>
+            )}
             <Sheet>
               <SheetTrigger asChild>
                 <Button
@@ -54,26 +92,26 @@ export default function Navbar() {
                       href={siteConfig.url}
                       className="flex items-center gap-2 text-xl font-bold"
                     >
-                      <span>Launch UI</span>
+                      <span>Togthr</span>
                     </a>
 
-                    <a
+                    {/* <a
                       href={siteConfig.url}
                       className="text-muted-foreground hover:text-foreground"
                     >
                       Getting Started
-                    </a>
+                    </a> */}
                     <a
-                      href={siteConfig.url}
+                      href={siteConfig.chat}
                       className="text-muted-foreground hover:text-foreground"
                     >
-                      Components
+                      chat
                     </a>
                     <a
-                      href={siteConfig.url}
+                      href={siteConfig.dashboard}
                       className="text-muted-foreground hover:text-foreground"
                     >
-                      Documentation
+                      Dashboard
                     </a>
                   </nav>
                 </SheetContent>

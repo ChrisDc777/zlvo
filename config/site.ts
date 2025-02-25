@@ -1,15 +1,17 @@
 export const siteConfig = {
   name: "Launch UI",
-  url: "https://launchuicomponents.com",
+  url: "http://localhost:3000",
+  chat:"http://localhost:3000/chat",
+  dashboard:"http://localhost:3000/dashboard",
   getStartedUrl:
-    "https://launchuicomponents.com/docs/getting-started/introduction",
+    "http://localhost:3000/dashboard",
   ogImage: "https://launchuicomponents.com/og.jpg",
   description:
     "Landing page components built with React, Shadcn/ui and Tailwind that will make your website feel premium.",
   links: {
-    twitter: "https://twitter.com/mikolajdobrucki",
-    github: "https://github.com/launch-ui/launch-ui",
-    email: "mailto:contact@mikolajdobrucki.com",
+    instagram: "https://www.instagram.com/chrisdcosta777/",
+    github: "https://github.com/ChrisDc777/togthr_pruf",
+    email: "chrisdcosta777@gmail.com",
   },
   pricing: {
     pro: "https://launchui.lemonsqueezy.com/buy/b4798c68-c858-4c34-860b-069b5a0d6c4e",
