@@ -55,7 +55,7 @@ export default function Hero() {
               <Button variant="default" size="lg" asChild>
                 <a href={siteConfig.getStartedUrl}>Start Your Health Journey</a>
               </Button>
-              <Button variant="glow" size="lg" asChild>
+              <Button variant="secondary" size="lg" asChild>
                 <a href={siteConfig.links.github}>
                   <Github className="mr-2 h-4 w-4" /> Github
                 </a>
