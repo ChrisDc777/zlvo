@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+pnpm-lock.yaml
 
 # testing
 /coverage
@@ -38,3 +39,6 @@ next-env.d.ts
 # pro
 /app/pro/
 /components/pro/
+
+# drizzle
+/drizzle/

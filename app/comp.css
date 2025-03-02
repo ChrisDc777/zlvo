@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 263 70% 51%;
+    --card: 0 0% 100%;
+    --card-foreground: 263 70% 51%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 263 70% 51%;
+    --primary: 263 70% 51%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 263 70% 95.9%;
+    --secondary-foreground: 263 70% 51%;
+    --muted: 263 70% 95.9%;
+    --muted-foreground: 263 70% 51%;
+    --accent: 263 70% 64.9%;
+    --accent-foreground: 263 70% 51%;
+    --destructive: 0 72.22% 50.59%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 263 70% 33.9%;
+    --input: 263 70% 90%;
+    --ring: 263 70% 64.9%;
+    --radius: 0.5rem;
+
+    --chart-1: 280 70% 50%;
+    --chart-2: 290 60% 45%;
+    --chart-3: 300 80% 55%;
+    --chart-4: 310 65% 60%;
+    --chart-5: 320 75% 55%;
+    /* 243.4 75.4% 58.6% */
+    --brand: 263 70% 61%;
+    --brand-foreground: 263 70% 72%;
+  }
+  .dark {
+    --background: 263 70% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 263 70% 15.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 263 70% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 263 70% 51%;
+    --secondary: 263 70% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 263 70% 15.9%;
+    --muted-foreground: 0 0% 98%;
+    --accent: 0 0% 98%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 0 0% 98%;
+    --input: 263 70% 15.9%;
+    --ring: 263 70% 83.9%;
+
+    --chart-1: 280 70% 50%;
+    --chart-2: 290 60% 45%;
+    --chart-3: 300 80% 55%;
+    --chart-4: 310 65% 60%;
+    --chart-5: 320 75% 55%;
+
+    --brand: 263 70% 72%;
+    --brand-foreground: 263 70% 61%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .fade-x {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 25%,
+      black 75%,
+      transparent 100%
+    );
+  }
+
+  .fade-y {
+    mask-image: linear-gradient(
+      to top,
+      transparent 0%,
+      black 25%,
+      black 75%,
+      transparent 100%
+    );
+  }
+
+  .fade-top {
+    mask-image: linear-gradient(to bottom, transparent 0%, black 35%);
+  }
+
+  .fade-bottom {
+    mask-image: linear-gradient(to top, transparent 0%, black 35%);
+  }
+
+  .fade-top-lg {
+    mask-image: linear-gradient(to bottom, transparent 15%, black 100%);
+  }
+
+  .fade-bottom-lg {
+    mask-image: linear-gradient(to top, transparent 15%, black 100%);
+  }
+
+  .fade-left {
+    mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  }
+
+  .fade-right {
+    mask-image: linear-gradient(to left, transparent 0%, black 35%);
+  }
+
+  .fade-left-lg {
+    mask-image: linear-gradient(to right, transparent 15%, black 100%);
+  }
+
+  .fade-right-lg {
+    mask-image: linear-gradient(to left, transparent 15%, black 100%);
+  }
+}
