@@ -27,7 +27,7 @@ export async function GET() {
   }
 
   return NextResponse.redirect(
-    "http://localhost:3000/dashboard"
+    `${process.env.KINDE_SITE_URL}/dashboard`
     // process.env.NODE_ENV === "development"
     // ? "http://localhost:3000/"
     // : "https://shoe-marshal.vercel.app/"

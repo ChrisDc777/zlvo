@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: "togthr",
-  url: "http://localhost:3000",
-  chat:"http://localhost:3000/chat",
-  dashboard:"http://localhost:3000/dashboard",
-  journal:"http://localhost:3000/journal",
+  url: `${process.env.KINDE_SITE_URL}`,
+  chat:`${process.env.KINDE_SITE_URL}/chat`,
+  dashboard:`${process.env.KINDE_SITE_URL}/dashboard`,
+  journal:`${process.env.KINDE_SITE_URL}/journal`,
   getStartedUrl:
-    "http://localhost:3000/dashboard",
+    `${process.env.KINDE_SITE_URL}/dashboard`,
   ogImage: "https://launchuicomponents.com/og.jpg",
   description:
     "Landing page components built with React, Shadcn/ui and Tailwind that will make your website feel premium.",
@@ -15,8 +15,8 @@ export const siteConfig = {
     email: "chrisdcosta777@gmail.com",
   },
   pricing: {
-    pro: "http://localhost:3000",
-    team: "http://localhost:3000",
+    pro: `${process.env.KINDE_SITE_URL}`,
+    team: `${process.env.KINDE_SITE_URL}`,
   },
   stats: {
     figma: "1,385",
