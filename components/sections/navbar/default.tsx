@@ -22,6 +22,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import logoImg from "@/public/pixil-frame.png";
+import Image from "next/image";
 
 export default async function Navbar() {
   const { getUser, isAuthenticated } = getKindeServerSession();
@@ -40,8 +42,15 @@ export default async function Navbar() {
               href={siteConfig.url}
               className="flex items-center gap-2 text-xl font-bold"
             >
-              <LaunchUI />
-              Togthr
+              {/* <LaunchUI /> */}
+              <Image
+                src={logoImg}
+                alt="Togthr Logo"
+                width={140}
+                height={30}
+                style={{ marginBottom: "6px" }}
+              />
+              {/* <h1>Togthr</h1> */}
             </a>
             <Navigation isAuthenticated={isUserAuthenticated} />
           </NavbarLeft>
