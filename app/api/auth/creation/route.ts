@@ -15,22 +15,21 @@ export async function GET() {
     throw new Error("Something went wrong...");
   }
 
-  let dbUser = await db.select().from(users).where(eq(users.id, user.id))
-  // console.log("chk", dbUser);
+  const existingDbUser = await db
+    .select()
+    .from(users)
+    .where(eq(users.id, user.id));
 
-
-  if (dbUser.length === 0) {
-    // console.log("hi")
-    let dbUser = await db.insert(users).values({
+  if (existingDbUser.length === 0) {
+    await db.insert(users).values({
       id: user.id,
-    })
-    // console.log("object", dbUser);
+    });
   }
 
   return NextResponse.redirect(
     "http://localhost:3000/dashboard"
     // process.env.NODE_ENV === "development"
-      // ? "http://localhost:3000/"
-      // : "https://shoe-marshal.vercel.app/"
+    // ? "http://localhost:3000/"
+    // : "https://shoe-marshal.vercel.app/"
   );
 }
