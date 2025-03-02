@@ -41,6 +41,13 @@ export default function Navigation({ isAuthenticated }: NavigationProps) {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href={siteConfig.journal} legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Journal
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
           </>
         )}
       </NavigationMenuList>

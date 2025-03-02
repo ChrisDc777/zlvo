@@ -101,7 +101,7 @@ const ChatPage: React.FC = () => {
             >
               <div className="flex flex-col">
                 <div
-                  className={`rounded-xl p-2 max-w-[70%] ${
+                  className={`rounded-xl p-2 max-w-[100%] ${
                     message.sender === "user"
                       ? "bg-muted text-foreground"
                       : "bg-primary text-primary-foreground"

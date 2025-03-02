@@ -53,10 +53,12 @@ const DashboardPage = () => {
   const [quote, setQuote] = useState("");
   const [userName, setUserName] = useState("User"); // Mock user name
   const [todos, setTodos] = useState<Todo[]>([
-    { id: 1, text: "Grocery Shopping", completed: false },
-    { id: 2, text: "Pay Bills", completed: true },
-    { id: 3, text: "Book Appointment", completed: false },
-  ]);
+    { id: 1, text: "Practice mindfulness meditation", completed: false },
+    { id: 3, text: "Take a walk outside", completed: false },
+    { id: 4, text: "Journal about your day", completed: false },
+    { id: 5, text: "Check in with a friend or loved one", completed: false },
+]);
+
   const [emotion, setEmotion] = useState(emotions[0]); // Initial emotion
 
   useEffect(() => {
@@ -108,7 +110,7 @@ const DashboardPage = () => {
 
   const tipsAndInsightsData = {
     label: "Tips & Insights",
-    value: "Read More",
+    value: "Be the Best You",
     icon: Lightbulb,
     color: "bg-gradient-to-br from-yellow-400 to-yellow-600",
   };

@@ -1,8 +1,9 @@
 export const siteConfig = {
-  name: "Launch UI",
+  name: "togthr",
   url: "http://localhost:3000",
   chat:"http://localhost:3000/chat",
   dashboard:"http://localhost:3000/dashboard",
+  journal:"http://localhost:3000/journal",
   getStartedUrl:
     "http://localhost:3000/dashboard",
   ogImage: "https://launchuicomponents.com/og.jpg",
@@ -14,8 +15,8 @@ export const siteConfig = {
     email: "chrisdcosta777@gmail.com",
   },
   pricing: {
-    pro: "https://launchui.lemonsqueezy.com/buy/b4798c68-c858-4c34-860b-069b5a0d6c4e",
-    team: "https://launchui.lemonsqueezy.com/buy/130d8cfe-e123-464b-9f67-c74c5fedfb45",
+    pro: "http://localhost:3000",
+    team: "http://localhost:3000",
   },
   stats: {
     figma: "1,385",

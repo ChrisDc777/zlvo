@@ -60,17 +60,17 @@ export default async function Navbar() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuItem>
-                    <LogoutLink postLogoutRedirectURL="/" className="text-lg">Log Out</LogoutLink>
+                    <LogoutLink className="text-lg">Log Out</LogoutLink>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
               <>
-                <LoginLink postLoginRedirectURL="/dashboard" className="hidden text-md md:block">
+                <LoginLink className="hidden text-md md:block">
                   Sign in
                 </LoginLink>
                 <GradientButton variant="variant" asChild>
-                  <RegisterLink postLoginRedirectURL="/dashboard">Sign up</RegisterLink>
+                  <RegisterLink>Sign up</RegisterLink>
                 </GradientButton>
               </>
             )}
