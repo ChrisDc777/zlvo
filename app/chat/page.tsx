@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { Send } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface Message {
   text: string;
