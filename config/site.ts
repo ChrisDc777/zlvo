@@ -1,11 +1,10 @@
 export const siteConfig = {
   name: "togthr",
-  url: `${process.env.KINDE_SITE_URL}`,
-  chat:`${process.env.KINDE_SITE_URL}/chat`,
-  dashboard:`${process.env.KINDE_SITE_URL}/dashboard`,
-  journal:`${process.env.KINDE_SITE_URL}/journal`,
-  getStartedUrl:
-    `${process.env.KINDE_SITE_URL}/dashboard`,
+  url: process.env.KINDE_SITE_URL || "http://localhost:3000", // Provide a default
+  chat: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/chat`,
+  dashboard: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/dashboard`,
+  journal: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/journal`,
+  getStartedUrl: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/dashboard`,
   ogImage: "https://launchuicomponents.com/og.jpg",
   description:
     "Landing page components built with React, Shadcn/ui and Tailwind that will make your website feel premium.",

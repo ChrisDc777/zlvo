@@ -4,7 +4,8 @@ import { inter } from "@/lib/fonts";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { siteConfig } from "../config/site";
 import Navbar from "@/components/sections/navbar/default";
-import { AuthProvider } from "./context/AuthProvider";
+import { ClerkProvider } from "@clerk/nextjs";
+// import { AuthProvider } from "./context/AuthProvider";
 import { ReactLenis } from "@/lib/lenis";
 
 export const metadata: Metadata = {
@@ -67,7 +68,8 @@ export default function RootLayout({
   const protectedRoutes = ["/protected", "/dashboard", "/settings"];
 
   return (
-    <AuthProvider>
+    // <AuthProvider>
+    <ClerkProvider>
       <ReactLenis root>
       <html lang="en" style={{ colorScheme: "dark" }} className="light">
         <body className={`${inter.className} bg-background antialiased`}>
@@ -78,6 +80,7 @@ export default function RootLayout({
         </body>
       </html>
       </ReactLenis>
-    </AuthProvider>
+    </ClerkProvider>
+    // </AuthProvider>
   );
 }

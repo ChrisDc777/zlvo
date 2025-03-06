@@ -84,8 +84,8 @@ html.lenis body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
 
-    --brand: 31 97% 72%;
-    --brand-foreground: 27 96% 61%;
+    --brand: 220 70% 50%;
+--brand-foreground: 220 70% 72%;
   }
 }
 
@@ -153,15 +153,14 @@ html.lenis body {
 }
 
 ::selection {
-  background-color: rgb(108, 14, 149);
+  background-color: rgb(55, 133, 234);
   color: azure;
 }
 
 ::-moz-selection {
-  background-color: rgb(108, 14, 149);
+  background-color: rgb(55, 133, 234);
   color: azure;
 }
-
 
 
 @layer base {

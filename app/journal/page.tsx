@@ -26,7 +26,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { createJournalEntry, getJournalEntriesByUserId } from "@/lib/actions";
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+// import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 // import { revalidatePath } from "next/cache";
 
 interface JournalEntry {
@@ -47,8 +47,8 @@ const labelOptions = {
 };
 
 const JournalPage = () => {
-  const { user, isLoading } = useKindeBrowserClient();
-  const userId = user?.id;
+  // const { user, isLoading } = useKindeBrowserClient();
+  // const userId = user?.id;
 
   const [entries, setEntries] = useState<JournalEntry[]>([]);
   const [content, setContent] = useState("");
@@ -60,25 +60,25 @@ const JournalPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [fetchingEntries, setFetchingEntries] = useState(true);
 
-  useEffect(() => {
-    const fetchEntries = async () => {
-      if (userId) {
-        setFetchingEntries(true);
-        try {
-          const data = await getJournalEntriesByUserId(userId);
-          setEntries(data);
-        } catch (error) {
-          console.error("Failed to fetch entries:", error);
-        } finally {
-          setFetchingEntries(false);
-        }
-      }
-    };
+  // useEffect(() => {
+  //   const fetchEntries = async () => {
+  //     if (userId) {
+  //       setFetchingEntries(true);
+  //       try {
+  //         const data = await getJournalEntriesByUserId(userId);
+  //         setEntries(data);
+  //       } catch (error) {
+  //         console.error("Failed to fetch entries:", error);
+  //       } finally {
+  //         setFetchingEntries(false);
+  //       }
+  //     }
+  //   };
 
-    if (!isLoading && userId) {
-      fetchEntries();
-    }
-  }, [userId, isLoading]);
+  //   if (!isLoading && userId) {
+  //     fetchEntries();
+  //   }
+  // }, [userId, isLoading]);
 
   const handleContentChange = (
     event: React.ChangeEvent<HTMLTextAreaElement>,
@@ -102,35 +102,35 @@ const JournalPage = () => {
       return;
     }
 
-    if (!userId) {
-      alert("You must be logged in to create entries.");
-      return;
-    }
+    // if (!userId) {
+    //   alert("You must be logged in to create entries.");
+    //   return;
+    // }
 
     setIsSubmitting(true);
 
-    try {
-      const result = await createJournalEntry(title, content, label, userId);
+    // try {
+    //   const result = await createJournalEntry(title, content, label, userId);
 
-      if (result.success) {
-        // Fetch the updated entries instead of optimistic update
-        const updatedEntries = await getJournalEntriesByUserId(userId);
-        setEntries(updatedEntries);
+    //   if (result.success) {
+    //     // Fetch the updated entries instead of optimistic update
+    //     const updatedEntries = await getJournalEntriesByUserId(userId);
+    //     setEntries(updatedEntries);
 
-        // Reset form
-        setContent("");
-        setTitle("");
-        setLabel("");
-        setOpen(false);
-      } else {
-        alert(result.error || "Failed to create entry.");
-      }
-    } catch (error) {
-      console.error("Error submitting entry:", error);
-      alert("An unexpected error occurred.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    //     // Reset form
+    //     setContent("");
+    //     setTitle("");
+    //     setLabel("");
+    //     setOpen(false);
+    //   } else {
+    //     alert(result.error || "Failed to create entry.");
+    //   }
+    // } catch (error) {
+    //   console.error("Error submitting entry:", error);
+    //   alert("An unexpected error occurred.");
+    // } finally {
+    //   setIsSubmitting(false);
+    // }
   };
 
   const handleViewEntry = (entry: JournalEntry) => {
@@ -153,17 +153,17 @@ const JournalPage = () => {
     };
   };
 
-  if (isLoading) {
-    return <div className="container mx-auto py-10">Loading...</div>;
-  }
+  // if (isLoading) {
+  //   return <div className="container mx-auto py-10">Loading...</div>;
+  // }
 
-  if (!userId) {
-    return (
-      <div className="container mx-auto py-10">
-        Please log in to view your journal.
-      </div>
-    );
-  }
+  // if (!userId) {
+  //   return (
+  //     <div className="container mx-auto py-10">
+  //       Please log in to view your journal.
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="container mx-auto py-10">

@@ -17,7 +17,7 @@ import LaunchUI from "../logos/launch-ui";
 import { siteConfig } from "@/config/site";
 
 interface NavigationProps {
-  isAuthenticated: boolean;
+  isAuthenticated: boolean | undefined;
 }
 
 export default function Navigation({ isAuthenticated }: NavigationProps) {

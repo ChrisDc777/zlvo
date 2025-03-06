@@ -1,3 +1,4 @@
+"use client";
 import Navbar from "../components/sections/navbar/default";
 import Hero from "../components/sections/hero/default";
 import Stats from "../components/sections/stats/default";
@@ -24,12 +25,13 @@ export default function Home() {
       {/* <Pricing /> */}
       {/* <TextRevealCardPreview /> */}
       
-      <CTA />
       <FAQ />
+      <CTA />
       
-      <AuroraBackgroundDemo />
+      
+      {/* <AuroraBackgroundDemo /> */}
       {/* Lamp, Bento Grid */}
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }

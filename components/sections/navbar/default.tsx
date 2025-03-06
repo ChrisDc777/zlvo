@@ -1,4 +1,6 @@
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+"use client"
+
+// import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import Navigation from "../../ui/navigation";
 import { Button } from "../../ui/button";
 import {
@@ -11,11 +13,11 @@ import { Menu } from "lucide-react";
 import LaunchUI from "../../logos/launch-ui";
 import { siteConfig } from "@/config/site";
 import { GradientButton } from "@/components/ui/gradient-button";
-import {
-  RegisterLink,
-  LoginLink,
-} from "@kinde-oss/kinde-auth-nextjs/components";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+// import {
+//   RegisterLink,
+//   LoginLink,
+// } from "@kinde-oss/kinde-auth-nextjs/components";
+// import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,13 +26,23 @@ import {
 } from "@/components/ui/dropdown-menu";
 import logoImg from "@/public/pixil-frame.png";
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
-export default async function Navbar() {
-  const { getUser, isAuthenticated } = getKindeServerSession();
-  const user = await getUser();
+export default function Navbar() {
+  const { isSignedIn, user, isLoaded } = useUser()
+  console.log(user);
+  // const { getUser, isAuthenticated } = getKindeServerSession();
+  // const user = await getUser();
 
-  // const { isAuthenticated } = getKindeServerSession();
-  const isUserAuthenticated = await isAuthenticated();
+  // // const { isAuthenticated } = getKindeServerSession();
+  // const isUserAuthenticated = await isAuthenticated();
 
   return (
     <header className="sticky top-0 z-50 -mb-4 px-4 pb-4">
@@ -52,37 +64,28 @@ export default async function Navbar() {
               />
               {/* <h1>Togthr</h1> */}
             </a>
-            <Navigation isAuthenticated={isUserAuthenticated} />
+            <Navigation isAuthenticated={isSignedIn} />
           </NavbarLeft>
           <NavbarRight>
-            {isUserAuthenticated ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
+            <SignedOut>
+              <SignInButton />
+              <GradientButton variant="variant" asChild>
+                <SignUpButton />
+              </GradientButton>
+            </SignedOut>
+            
+            <SignedIn>
+            {/* <Button
                     variant="ghost"
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground"
                   >
-                    {user?.given_name
-                      ? user.given_name.charAt(0).toUpperCase()
+                    {user?.fullName
+                      ? user.fullName.charAt(0).toUpperCase()
                       : "?"}
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuItem>
-                    <LogoutLink className="text-lg">Log Out</LogoutLink>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <>
-                <LoginLink className="hidden text-md md:block">
-                  Sign in
-                </LoginLink>
-                <GradientButton variant="variant" asChild>
-                  <RegisterLink>Sign up</RegisterLink>
-                </GradientButton>
-              </>
-            )}
+                  </Button> */}
+              <UserButton />
+            </SignedIn>
+            
             <Sheet>
               <SheetTrigger asChild>
                 <Button
