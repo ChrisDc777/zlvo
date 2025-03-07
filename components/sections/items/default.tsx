@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Item, ItemIcon, ItemTitle, ItemDescription } from "../../ui/item";
 import { Section } from "../../ui/section";
+import { FeaturesSectionWithHoverEffects } from "@/components/feature-section-with-hover-effects";
 
 export default function Items() {
   return (
@@ -18,6 +19,11 @@ export default function Items() {
         <h2 className="max-w-[560px] text-center text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
           Everything your health chatbot needs to keep you healthy.
         </h2>
+        {/* <div className="min-h-screen w-full">
+          <div className="absolute top-0 left-0 w-full"> */}
+            <FeaturesSectionWithHoverEffects />
+          {/* </div>
+        </div> */}
         <div className="grid auto-rows-fr grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
           <Item>
             <ItemTitle className="flex items-center gap-2">
