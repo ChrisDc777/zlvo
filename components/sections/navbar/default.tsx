@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 // import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import Navigation from "../../ui/navigation";
@@ -24,8 +24,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logoImg from "@/public/pixil-frame.png";
-import Image from "next/image";
+// import logoImg from "@/public/pixil-frame.png";
+// import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 import {
   SignInButton,
@@ -33,10 +33,10 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
-} from '@clerk/nextjs'
+} from "@clerk/nextjs";
 
 export default function Navbar() {
-  const { isSignedIn, user, isLoaded } = useUser()
+  const { isSignedIn, user, isLoaded } = useUser();
   console.log(user);
   // const { getUser, isAuthenticated } = getKindeServerSession();
   // const user = await getUser();
@@ -55,14 +55,15 @@ export default function Navbar() {
               className="flex items-center gap-2 text-xl font-bold"
             >
               {/* <LaunchUI /> */}
-              <Image
+              {/* <Image
                 src={logoImg}
                 alt="Togthr Logo"
                 width={140}
                 height={30}
                 style={{ marginBottom: "6px" }}
-              />
-              {/* <h1>Togthr</h1> */}
+              /> */}
+              <h1>🕊️ Smart Structuring</h1>
+              <span className="text-xs text-blue-400 ml-1">by Team Winged</span>
             </a>
             <Navigation isAuthenticated={isSignedIn} />
           </NavbarLeft>
@@ -73,9 +74,9 @@ export default function Navbar() {
                 <SignUpButton />
               </GradientButton>
             </SignedOut>
-            
+
             <SignedIn>
-            {/* <Button
+              {/* <Button
                     variant="ghost"
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground"
                   >
@@ -85,7 +86,7 @@ export default function Navbar() {
                   </Button> */}
               <UserButton />
             </SignedIn>
-            
+
             <Sheet>
               <SheetTrigger asChild>
                 <Button
@@ -119,12 +120,12 @@ export default function Navbar() {
                     >
                       chat
                     </a>
-                    <a
+                    {/* <a
                       href={siteConfig.dashboard}
                       className="text-muted-foreground hover:text-foreground"
                     >
                       Dashboard
-                    </a>
+                    </a> */}
                   </nav>
                 </SheetContent>
               </SheetTitle>

@@ -71,7 +71,7 @@ export default function RootLayout({
     // <AuthProvider>
     <ClerkProvider>
       <ReactLenis root>
-      <html lang="en" style={{ colorScheme: "dark" }} className="light">
+      <html lang="en" style={{ colorScheme: "dark" }} className="dark">
         <body className={`${inter.className} bg-background antialiased`}>
           <Navbar />
           <ThemeProvider>

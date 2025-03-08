@@ -15,36 +15,37 @@ import { FeaturesSectionWithHoverEffects } from "@/components/feature-section-wi
 export default function Items() {
   return (
     <Section>
-      <div className="mx-auto flex max-w-container flex-col items-center gap-6 sm:gap-20">
+      <div className="mx-auto flex max-w-container flex-col items-center gap-4 sm:gap-10">
         <h2 className="max-w-[560px] text-center text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">
-          Everything your health chatbot needs to keep you healthy.
+          Why Choose Us?
         </h2>
-        {/* <div className="min-h-screen w-full">
-          <div className="absolute top-0 left-0 w-full"> */}
-            <FeaturesSectionWithHoverEffects />
-          {/* </div>
-        </div> */}
-        <div className="grid auto-rows-fr grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+        <p className="text-center text-gray-400">
+          Everything you need to transform your handwritten data.
+        </p>
+        <div className="min-h-screen w-full">
+          {/* <div className="absolute top-0 left-0 w-full"> */}
+          <FeaturesSectionWithHoverEffects />
+          {/* </div> */}
+        </div>
+        {/* <div className="grid auto-rows-fr grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
                 <UserIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Personalized Health Assistance
+              Easy Image Upload
             </ItemTitle>
-            <ItemDescription>
-              Get tailored advice based on your symptoms and medical history
-            </ItemDescription>
+            <ItemDescription>Upload images of your handwritten records</ItemDescription>
           </Item>
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
                 <MicIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Voice Interaction
+              Automated Table Conversion
             </ItemTitle>
             <ItemDescription>
-              Talk to your AI chatbot for hands-free and interactive health support
+              AI-powered OCR and NLP to convert images to digital tables.
             </ItemDescription>
           </Item>
           <Item>
@@ -52,10 +53,10 @@ export default function Items() {
               <ItemIcon>
                 <HeartIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Real-time Health Monitoring
+              Data Validation
             </ItemTitle>
             <ItemDescription>
-              Track vital signs and health metrics in real-time for immediate advice
+              Ensure accuracy with automated data quality checks.
             </ItemDescription>
           </Item>
           <Item>
@@ -63,10 +64,10 @@ export default function Items() {
               <ItemIcon>
                 <MessageSquareIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Instant Support
+              Seamless Integration
             </ItemTitle>
             <ItemDescription>
-              Get instant replies and personalized suggestions at any time of the day
+              Integrate with databases like Snowflake for easy analysis
             </ItemDescription>
           </Item>
           <Item>
@@ -74,21 +75,22 @@ export default function Items() {
               <ItemIcon>
                 <CalendarIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Health Reminders
+              Scheduled Processing
             </ItemTitle>
             <ItemDescription>
-              Set reminders for medications, appointments, and healthy habits
+              Automate data extraction on a schedule.
             </ItemDescription>
           </Item>
           <Item>
             <ItemTitle className="flex items-center gap-2">
               <ItemIcon>
                 <ShieldIcon className="h-5 w-5 stroke-1" />
-              </ItemIcon>
-              Privacy & Security
-            </ItemTitle>
+                </ItemIcon>
+                Data Security
+              </ItemTitle>
+
             <ItemDescription>
-              All your health data is stored securely and with utmost privacy
+              Secure data storage and access controls
             </ItemDescription>
           </Item>
           <Item>
@@ -96,10 +98,10 @@ export default function Items() {
               <ItemIcon>
                 <ActivityIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Exercise Recommendations
+              Customizable Workflows
             </ItemTitle>
             <ItemDescription>
-              Get workout routines based on your fitness level and health goals
+              Tailor the process to your specific needs
             </ItemDescription>
           </Item>
           <Item>
@@ -107,13 +109,13 @@ export default function Items() {
               <ItemIcon>
                 <CloudIcon className="h-5 w-5 stroke-1" />
               </ItemIcon>
-              Cloud-based Sync
+              Cloud-Based Access
             </ItemTitle>
             <ItemDescription>
-              Sync your health data across devices for continuous monitoring and advice
+              Access your digitized data from anywhere.
             </ItemDescription>
           </Item>
-        </div>
+        </div> */}
       </div>
     </Section>
   );

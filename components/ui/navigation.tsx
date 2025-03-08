@@ -15,6 +15,7 @@ import {
 } from "./navigation-menu";
 import LaunchUI from "../logos/launch-ui";
 import { siteConfig } from "@/config/site";
+import { GradientButton } from "./gradient-button";
 
 interface NavigationProps {
   isAuthenticated: boolean | undefined;
@@ -26,28 +27,33 @@ export default function Navigation({ isAuthenticated }: NavigationProps) {
       <NavigationMenuList>
         {isAuthenticated && (
           <>
+
             <NavigationMenuItem>
               <Link href={siteConfig.chat} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  chat
+                  <GradientButton>
+                    chat
+                  </GradientButton>
                 </NavigationMenuLink>
               </Link>
+
             </NavigationMenuItem>
 
-            <NavigationMenuItem>
+
+            {/* <NavigationMenuItem>
               <Link href={siteConfig.dashboard} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Dashboard
                 </NavigationMenuLink>
               </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
+            </NavigationMenuItem> */}
+            {/* <NavigationMenuItem>
               <Link href={siteConfig.journal} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Journal
                 </NavigationMenuLink>
               </Link>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
           </>
         )}
       </NavigationMenuList>

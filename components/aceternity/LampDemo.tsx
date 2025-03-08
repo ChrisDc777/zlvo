@@ -16,7 +16,8 @@ export function LampDemo() {
         }}
         className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
-        It&apos;s okay to not be okay <br /> Your feelings are valid.
+        Digitize your records effortlessly. <br />
+        From handwritten to database.
       </motion.h1>
     </LampContainer>
   );

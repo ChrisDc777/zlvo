@@ -19,8 +19,13 @@ export default function FooterSection() {
           <FooterContent>
             <FooterColumn className="col-span-2 sm:col-span-3 md:col-span-1">
               <div className="flex items-center gap-2">
-                <LaunchUI />
-                <h3 className="text-xl font-bold">Togthr</h3>
+                {/* <LaunchUI /> */}
+                <h3 className="text-xl font-bold">
+                  <div>
+                    Smart Structuring
+                    <div className="text-sm">Winged 🕊️</div>
+                  </div>
+                </h3>
               </div>
             </FooterColumn>
             <FooterColumn>
@@ -31,12 +36,12 @@ export default function FooterSection() {
               >
                 chat
               </a>
-              <a
+              {/* <a
                 href={siteConfig.dashboard}
                 className="text-sm text-muted-foreground"
               >
                 Dashboard
-              </a>
+              </a> */}
             </FooterColumn>
             <FooterColumn>
               <h3 className="text-md pt-1 font-semibold">Company</h3>
@@ -71,7 +76,7 @@ export default function FooterSection() {
                 href={siteConfig.links.instagram}
                 className="text-sm text-muted-foreground flex items-center gap-1"
               >
-                Instagram <InstagramLogoIcon/>
+                Instagram <InstagramLogoIcon />
               </a>
               <a
                 href={siteConfig.links.github}

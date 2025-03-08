@@ -12,6 +12,9 @@ import { AuroraBackgroundDemo } from "@/components/aceternity/AuroraFooter";
 import { TextRevealCardPreview } from "@/components/aceternity/textReveal";
 import { LampDemo } from "@/components/aceternity/LampDemo";
 import { DemoHeroGeometric } from "@/components/kokonut/Hero";
+import { AnimatedTabsDemo } from "@/components/animatedTabs";
+import { AnimatedBeamUni } from "@/components/magicui/AnimatedBeamUni";
+import { AnimatedBeamMultipleOutput } from "@/components/magicui/AnimatedBeamMultiple";
 
 export default function Home() {
   return (
@@ -19,16 +22,24 @@ export default function Home() {
       {/* <Navbar /> */}
       <DemoHeroGeometric/>
       <Hero />
-      <Stats />
+      
+      {/* Dummy Stats */}
+      {/* <Stats /> */}
+
+      <AnimatedBeamUni/>
+      <AnimatedBeamMultipleOutput/>
+
       <LampDemo/>
-      <Logos />
+
+      <AnimatedTabsDemo/>
+      {/* <Logos /> */}
       <Items />
       
       
-      {/* <Pricing /> */}
+      <Pricing />
       {/* <TextRevealCardPreview /> */}
       
-      <FAQ />
+      {/* <FAQ /> */}
       <CTA />
       
       
