@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "togthr",
+  name: "Smart structuring",
   url: process.env.KINDE_SITE_URL || "http://localhost:3000", // Provide a default
-  chat: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/chat`,
+  chat: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/dashboard`,
   dashboard: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/dashboard`,
   journal: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/journal`,
   getStartedUrl: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/dashboard`,
@@ -10,7 +10,7 @@ export const siteConfig = {
     "Landing page components built with React, Shadcn/ui and Tailwind that will make your website feel premium.",
   links: {
     instagram: "https://www.instagram.com/chrisdcosta777/",
-    github: "https://github.com/ChrisDc777/togthr_pruf",
+    github: "https://github.com/ChrisDc777/zlvo",
     email: "chrisdcosta777@gmail.com",
   },
   pricing: {

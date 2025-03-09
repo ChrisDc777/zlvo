@@ -23,7 +23,7 @@ export default function FooterSection() {
                 <h3 className="text-xl font-bold">
                   <div>
                     Smart Structuring
-                    <div className="text-sm">Winged 🕊️</div>
+                    <div className="text-sm font-thin">by Team Winged 🕊️</div>
                   </div>
                 </h3>
               </div>
@@ -31,10 +31,10 @@ export default function FooterSection() {
             <FooterColumn>
               <h3 className="text-md pt-1 font-semibold">Product</h3>
               <a
-                href={siteConfig.chat}
+                href={siteConfig.dashboard}
                 className="text-sm text-muted-foreground"
               >
-                chat
+                Dashboard
               </a>
               {/* <a
                 href={siteConfig.dashboard}

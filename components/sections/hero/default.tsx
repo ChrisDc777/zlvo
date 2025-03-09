@@ -23,7 +23,7 @@ export default function Hero() {
       src = "/app-dark.png";
       break;
     default:
-      src = "/app-dark.png";
+      src = "/chatInterface.png";
       break;
   }
 

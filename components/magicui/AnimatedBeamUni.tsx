@@ -31,23 +31,26 @@ export function AnimatedBeamUni() {
   const containerRef = useRef<HTMLDivElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
+  const div3Ref = useRef<HTMLDivElement>(null);
+  
 
   return (
     <div
-      className="relative flex  w-full max-w-[300px] items-center justify-center overflow-hidden p-10"
+      className="relative flex  w-full max-w-[400px] items-center justify-center overflow-hidden p-10"
       ref={containerRef}
     >
       <div className="flex size-full flex-col items-stretch justify-between gap-10">
         <div className="flex flex-row justify-between">
+          <Circle ref={div3Ref}>
+            <Icons.user />
+          </Circle>
           <Circle ref={div1Ref}>
-            {/* <Icons.user /> */}
             <Image src={Gemini} alt="Gemini" width={34} height={34} />
 
-            
+
           </Circle>
           <Circle ref={div2Ref}>
-            <Image src={Informatica} alt="Informatica" width={34} height={34} />
-
+            <Image src={Informatica} alt="Gemini" width={34} height={34} />
             {/* <Icons.openai /> */}
           </Circle>
         </div>
@@ -58,6 +61,12 @@ export function AnimatedBeamUni() {
         containerRef={containerRef}
         fromRef={div1Ref}
         toRef={div2Ref}
+      />
+      <AnimatedBeam
+        duration={3}
+        containerRef={containerRef}
+        fromRef={div3Ref}
+        toRef={div1Ref}
       />
     </div>
   );

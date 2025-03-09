@@ -4,7 +4,7 @@ import { inter } from "@/lib/fonts";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { siteConfig } from "../config/site";
 import Navbar from "@/components/sections/navbar/default";
-import { ClerkProvider } from "@clerk/nextjs";
+import { AuthProvider } from "./context/AuthProvider";
 // import { AuthProvider } from "./context/AuthProvider";
 import { ReactLenis } from "@/lib/lenis";
 
@@ -69,7 +69,7 @@ export default function RootLayout({
 
   return (
     // <AuthProvider>
-    <ClerkProvider>
+    <AuthProvider>
       <ReactLenis root>
       <html lang="en" style={{ colorScheme: "dark" }} className="dark">
         <body className={`${inter.className} bg-background antialiased`}>
@@ -80,7 +80,7 @@ export default function RootLayout({
         </body>
       </html>
       </ReactLenis>
-    </ClerkProvider>
+    </AuthProvider>
     // </AuthProvider>
   );
 }

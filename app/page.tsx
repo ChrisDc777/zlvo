@@ -12,7 +12,7 @@ import { AuroraBackgroundDemo } from "@/components/aceternity/AuroraFooter";
 import { TextRevealCardPreview } from "@/components/aceternity/textReveal";
 import { LampDemo } from "@/components/aceternity/LampDemo";
 import { DemoHeroGeometric } from "@/components/kokonut/Hero";
-import { AnimatedTabsDemo } from "@/components/animatedTabs";
+import { DataDigitizationFlow } from "@/components/animatedTabs";
 import { AnimatedBeamUni } from "@/components/magicui/AnimatedBeamUni";
 import { AnimatedBeamMultipleOutput } from "@/components/magicui/AnimatedBeamMultiple";
 
@@ -26,16 +26,16 @@ export default function Home() {
       {/* Dummy Stats */}
       {/* <Stats /> */}
 
-      <AnimatedBeamUni/>
-      <AnimatedBeamMultipleOutput/>
+      {/* <AnimatedBeamUni/>
+      <AnimatedBeamMultipleOutput/> */}
 
       <LampDemo/>
+      <DataDigitizationFlow/>
 
-      <AnimatedTabsDemo/>
-      {/* <Logos /> */}
       <Items />
+      {/* <Logos /> */}
       
-      
+
       <Pricing />
       {/* <TextRevealCardPreview /> */}
       

@@ -28,25 +28,27 @@ export default function Navigation({ isAuthenticated }: NavigationProps) {
         {isAuthenticated && (
           <>
 
-            <NavigationMenuItem>
+            {/* <NavigationMenuItem>
               <Link href={siteConfig.chat} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  <GradientButton>
+                  <GradientButton variant="variant">
                     chat
                   </GradientButton>
                 </NavigationMenuLink>
               </Link>
 
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
 
 
-            {/* <NavigationMenuItem>
+            <NavigationMenuItem>
               <Link href={siteConfig.dashboard} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Dashboard
+                <GradientButton variant="variant">
+                    Dashboard
+                  </GradientButton>
                 </NavigationMenuLink>
               </Link>
-            </NavigationMenuItem> */}
+            </NavigationMenuItem>
             {/* <NavigationMenuItem>
               <Link href={siteConfig.journal} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>

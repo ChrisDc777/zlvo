@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import healthCsv from "@/public/imgExample/healthcareCsv.jpg";
@@ -13,12 +12,14 @@ import stationaryCsv from "@/public/imgExample/stationaryCsv.jpg";
 import Image from "next/image";
 import { AnimatedBeamUni } from "@/components/magicui/AnimatedBeamUni";
 import { AnimatedBeamMultipleOutput } from "@/components/magicui/AnimatedBeamMultiple";
+import { ArrowRightIcon, ChevronRight } from "lucide-react";
 
 interface Tab {
   id: string;
   label: string;
   content: React.ReactNode;
   disabled?: boolean;
+  dummy?: boolean;
 }
 
 interface AnimatedTabsProps {
@@ -32,7 +33,7 @@ const defaultTabs: Tab[] = [
     id: "retail",
     label: "Retail",
     content: (
-      <div className="flex flex-col items-center justify-around w-full h-full">
+      <div className="flex flex-col items-center justify-center w-full h-full">
         <h3 className="text-lg font-semibold text-gray-300 mb-4">
           Retail Data Flow
         </h3>
@@ -45,9 +46,24 @@ const defaultTabs: Tab[] = [
               alt="Stationary Transcripts"
               className="h-48 object-contain rounded-md"
             />
-            
+            <AnimatedBeamUni />
+            <span className="text-sm text-gray-500 mt-4">
+              Transcripts Processing from handwitten notes to Gemini to Informatica
+            </span>
           </div>
-          <AnimatedBeamUni />
+
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-row text-slate-400">
+              <ChevronRight className="h-8 w-16 mr-[-10px]" />
+              <ChevronRight className="h-8 w-16 mr-[-10px]" />
+              <ChevronRight className="h-8 w-16 mr-[-10px]" />
+              <ChevronRight className="h-8 w-16" />
+            </div>
+            {/* <ArrowRightIcon className="h-8 w-16 text-gray-300" /> */}
+            <span className="text-sm text-gray-500 mt-4">
+              Converted and stored in Database
+            </span>
+          </div>
 
           {/* CSV Data Section */}
           <div className="flex-1 flex flex-col items-center">
@@ -57,9 +73,8 @@ const defaultTabs: Tab[] = [
               alt="Stationary CSV Data"
               className="h-48 object-contain rounded-md"
             />
-            
+            <AnimatedBeamMultipleOutput />
           </div>
-          <AnimatedBeamMultipleOutput />
         </div>
       </div>
     ),
@@ -68,7 +83,7 @@ const defaultTabs: Tab[] = [
     id: "healthcare",
     label: "Healthcare",
     content: (
-      <div className="flex flex-col items-center justify-around w-full h-full">
+      <div className="flex flex-col items-center justify-center w-full h-full">
         <h3 className="text-lg font-semibold text-gray-300 mb-4">
           Healthcare Data Flow
         </h3>
@@ -76,7 +91,7 @@ const defaultTabs: Tab[] = [
           {/* Transcripts Section */}
           <div className="flex-1 flex flex-col items-center">
             <span className="text-sm text-gray-500">Transcripts</span>
-            <div className="flex items-center space-x-3">
+            <div className="flex flex-row p-16 md:p-4 sm:p-0">
               <Image
                 src={healthPic1}
                 alt="Healthcare Transcripts 1"
@@ -94,8 +109,22 @@ const defaultTabs: Tab[] = [
               />
             </div>
             <AnimatedBeamUni />
+            <span className="text-sm text-gray-500 mt-4">
+              Transcripts Processing from handwitten notes to Gemini to Informatica
+            </span>
           </div>
-
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-row text-slate-400">
+              <ChevronRight className="h-8 w-16 mr-[-10px]" />
+              <ChevronRight className="h-8 w-16 mr-[-10px]" />
+              <ChevronRight className="h-8 w-16 mr-[-10px]" />
+              <ChevronRight className="h-8 w-16" />
+            </div>
+            {/* <ArrowRightIcon className="h-8 w-16 text-gray-300" /> */}
+            <span className="text-sm text-gray-500 mt-4">
+              Converted and stored in Database
+            </span>
+          </div>
           {/* CSV Data Section */}
           <div className="flex-1 flex flex-col items-center">
             <span className="text-sm text-gray-500">CSV Data</span>
@@ -114,7 +143,7 @@ const defaultTabs: Tab[] = [
     id: "ecommerce",
     label: "E-commerce",
     content: (
-      <div className="flex flex-col items-center justify-around w-full h-full">
+      <div className="flex flex-col items-center justify-center w-full h-full">
         <h3 className="text-lg font-semibold text-gray-300 mb-4">
           E-commerce Data Flow
         </h3>
@@ -145,6 +174,18 @@ const defaultTabs: Tab[] = [
     ),
     disabled: true,
   },
+  {
+    id: "dummy1",
+    label: "And Much",
+    content: <></>,
+    dummy: true,
+  },
+  {
+    id: "dummy2",
+    label: "More...",
+    content: <></>,
+    dummy: true,
+  },
 ];
 
 const AnimatedTabs = ({
@@ -170,30 +211,46 @@ const AnimatedTabs = ({
         className
       )}
     >
-      <div className="flex gap-2 flex-wrap bg-gray-800 bg-opacity-70 backdrop-blur-md p-2 rounded-xl shadow-md">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => handleTabClick(tab.id)}
-            disabled={tab.disabled}
-            className={cn(
-              "relative px-4 py-2 text-sm font-medium rounded-lg text-gray-200 outline-none transition-colors hover:bg-gray-700",
-              tab.disabled && "opacity-50 cursor-not-allowed"
-            )}
-          >
-            {activeTab === tab.id && (
-              <motion.div
-                layoutId="active-tab"
-                className="absolute inset-0 bg-gray-600 bg-opacity-50 shadow-[0_0_15px_rgba(0,0,0,0.3)] backdrop-blur-sm !rounded-lg"
-                transition={{ type: "spring", duration: 0.5 }}
-              />
-            )}
-            <span className="relative z-10">{tab.label}</span>
-          </button>
-        ))}
+      <div className="flex gap-2 flex-wrap bg-gradient-to-br from-gray-800 to-black bg-opacity-70 backdrop-blur-md p-2 rounded-xl shadow-md">
+        {tabs.map((tab) =>
+          tab.dummy ? (
+            // Render dummy tab
+            <div
+              key={tab.id}
+              className={cn(
+                "px-4 py-2 text-sm font-medium rounded-lg text-gray-300 bg-gray-800 bg-opacity-50 cursor-not-allowed",
+                "opacity-50"
+              )}
+            >
+              <span className="relative z-10">{tab.label}</span>
+            </div>
+          ) : (
+            // Render interactive tab
+            <button
+              key={tab.id}
+              onClick={() => handleTabClick(tab.id)}
+              disabled={tab.disabled}
+              className={cn(
+                "relative px-4 py-2 text-sm font-medium rounded-lg text-gray-200 outline-none transition-colors hover:bg-gray-700",
+                tab.disabled && "opacity-50 cursor-not-allowed"
+              )}
+            >
+              {activeTab === tab.id && (
+                <motion.div
+                  layoutId="active-tab"
+                  className="absolute inset-0 bg-gray-600 bg-opacity-50 shadow-[0_0_15px_rgba(0,0,0,0.3)] backdrop-blur-sm !rounded-lg"
+                  transition={{ type: "spring", duration: 0.5 }}
+                />
+              )}
+              <span className="relative z-10">{tab.label}</span>
+            </button>
+          )
+        )}
       </div>
 
-      <div className="p-5 bg-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.3)] text-gray-300 bg-opacity-70 backdrop-blur-md rounded-xl border border-gray-700 min-h-60 h-full">
+      <div
+        className="p-5 bg-gradient-to-br from-black to-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.3)] text-gray-300 bg-opacity-80 backdrop-blur-md rounded-xl border border-gray-700 min-h-60 h-full hover:bg-opacity-90 transition-all duration-200"
+      >
         {tabs.map(
           (tab) =>
             activeTab === tab.id && (
