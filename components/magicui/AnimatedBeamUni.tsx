@@ -32,11 +32,10 @@ export function AnimatedBeamUni() {
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
   const div3Ref = useRef<HTMLDivElement>(null);
-  
 
   return (
     <div
-      className="relative flex  w-full max-w-[400px] items-center justify-center overflow-hidden p-10"
+      className="relative flex w-full max-w-[400px] items-center justify-center overflow-hidden p-10"
       ref={containerRef}
     >
       <div className="flex size-full flex-col items-stretch justify-between gap-10">
@@ -44,15 +43,24 @@ export function AnimatedBeamUni() {
           <Circle ref={div3Ref}>
             <Icons.user />
           </Circle>
-          <Circle ref={div1Ref}>
-            <Image src={Gemini} alt="Gemini" width={34} height={34} />
 
+          <div className="flex flex-col items-center">
+            <Circle ref={div1Ref}>
+              <Image src={Gemini} alt="Gemini" width={34} height={34} />
+            </Circle>
+            <p className="text-center text-xs mt-1">
+              AI digitizes using Image recognition capabilities
+            </p>
+          </div>
 
-          </Circle>
-          <Circle ref={div2Ref}>
-            <Image src={Informatica} alt="Gemini" width={34} height={34} />
-            {/* <Icons.openai /> */}
-          </Circle>
+          <div className="flex flex-col items-center">
+            <Circle ref={div2Ref}>
+              <Image src={Informatica} alt="Informatica" width={34} height={34} />
+            </Circle>
+            <p className="text-center text-xs mt-1">
+              Data cleaning, masking, filter, sorter
+            </p>
+          </div>
         </div>
       </div>
 

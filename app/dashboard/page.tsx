@@ -22,7 +22,7 @@ export default function Dashboard() {
         <h1 className="text-5xl font-extrabold mb-6 tracking-tight leading-tight">
           Informatica Chat <span className="text-blue-500">Dashboard</span>
         </h1>
-        <p className="text-lg text-gray-400 mb-8 flex items-center justify-center">
+        <div className="text-lg text-gray-400 mb-8 flex items-center justify-center">
           Intelligent Chat Solutions Powered by
           <div className="relative ml-2 h-10 w-36">
             {" "}
@@ -35,7 +35,7 @@ export default function Dashboard() {
               />
             </div>
           </div>
-        </p>
+        </div>
         <div className="flex flex-col sm:flex-row space-x-0 sm:space-x-4 space-y-4 sm:space-y-0">
           <Button
             variant="outline"

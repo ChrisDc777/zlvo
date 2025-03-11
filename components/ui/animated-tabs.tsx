@@ -47,9 +47,9 @@ const defaultTabs: Tab[] = [
               className="h-48 object-contain rounded-md"
             />
             <AnimatedBeamUni />
-            <span className="text-sm text-gray-500 mt-4">
+            {/* <span className="text-sm text-gray-500 mt-4">
               Transcripts Processing from handwitten notes to Gemini to Informatica
-            </span>
+            </span> */}
           </div>
 
           <div className="flex flex-col items-center justify-center">
@@ -61,7 +61,7 @@ const defaultTabs: Tab[] = [
             </div>
             {/* <ArrowRightIcon className="h-8 w-16 text-gray-300" /> */}
             <span className="text-sm text-gray-500 mt-4">
-              Converted and stored in Database
+              Converted to a CSV table for further processing
             </span>
           </div>
 
@@ -109,9 +109,9 @@ const defaultTabs: Tab[] = [
               />
             </div>
             <AnimatedBeamUni />
-            <span className="text-sm text-gray-500 mt-4">
+            {/* <span className="text-sm text-gray-500 mt-4">
               Transcripts Processing from handwitten notes to Gemini to Informatica
-            </span>
+            </span> */}
           </div>
           <div className="flex flex-col items-center justify-center">
             <div className="flex flex-row text-slate-400">

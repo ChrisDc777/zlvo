@@ -56,6 +56,11 @@ const InternetChatPage = () => {
       const updatedApiUrl = `${fullUrl.origin}${fullUrl.pathname}?${searchParams.toString()}`;
 
       const response = await fetch(updatedApiUrl);
+      if (!response.ok) {
+        throw new Error(
+          `Server is busy. Please try again.`
+        );
+      }
       const data = await response.json();
       const aiResponse: string = data?.Full_Answer || 'No response.';
 
@@ -67,13 +72,16 @@ const InternetChatPage = () => {
         ...prevMessages,
         { text: aiResponse, isUser: false },
       ]);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error sending message:', error);
       setMessages((prevMessages) => [
         ...prevMessages,
-        { text: 'Failed to get response.', isUser: false },
+        {
+          text:
+            error.message || 'Server is busy. Please try again.',
+          isUser: false,
+        },
       ]);
-      // setLoadingDuration(3000);
     }
   };
 
@@ -106,11 +114,11 @@ const InternetChatPage = () => {
   return (
     <div className="flex min-h-screen flex-col bg-black text-gray-300">
       <div className="flex flex-col items-center p-2 gap-2">
-      <h1 className="text-3xl font-bold text-blue-500 flex items-center gap-2">
-            Chat with 
-            <Globe className='h-12'/>
-            {/* <Image src={Salesforce} alt="Salesforce" width={68} /> */}
-          </h1>
+        <h1 className="text-3xl font-bold text-blue-500 flex items-center gap-2">
+          Chat with
+          <Globe className="h-12" />
+          {/* <Image src={Salesforce} alt="Salesforce" width={68} /> */}
+        </h1>
 
         <div className="flex items-center text-sm text-gray-400 ml-4">
           Powered by

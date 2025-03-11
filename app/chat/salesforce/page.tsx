@@ -1,34 +1,34 @@
-"use client";
+'use client';
 
-import React, { useState, useRef, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Lightbulb } from "lucide-react";
-import InformaticaText from "@/public/informatica-text.svg";
-import Image from "next/image";
+import React, { useState, useRef, useEffect } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Lightbulb } from 'lucide-react';
+import InformaticaText from '@/public/informatica-text.svg';
+import Image from 'next/image';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { AIInputWithLoading } from "@/components/kokonut/ai-input-with-loading";
-import { BotMessage, UserMessage } from "@/components/custom/ChatMessage";
-import Salesforce from "@/public/salesforce.svg";
+} from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
+import { AIInputWithLoading } from '@/components/kokonut/ai-input-with-loading';
+import { BotMessage, UserMessage } from '@/components/custom/ChatMessage';
+import Salesforce from '@/public/salesforce.svg';
 
 const SalesforceChatPage = () => {
-  const apiUrl = "/api/salesforce";
+  const apiUrl = '/api/salesforce';
   const salesforceChips = [
-    "What does Salesforce do?",
-    "How much does Salesforce cost?",
-    "What is the latest opportunity status",
-    "What is Service Cloud?",
-    "Do you offer a free trial?",
+    'What does Salesforce do?',
+    'How much does Salesforce cost?',
+    'What is the latest opportunity status',
+    'What is Service Cloud?',
+    'Do you offer a free trial?',
   ];
 
-  const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>(
-    [],
-  );
+  const [messages, setMessages] = useState<
+    { text: string; isUser: boolean }[]
+  >([]);
   const chatAreaRef = useRef<HTMLDivElement>(null);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
@@ -42,7 +42,7 @@ const SalesforceChatPage = () => {
 
   const simulateResponse = async (
     userPrompt: string,
-    setLoadingDuration: (duration: number) => void,
+    setLoadingDuration: (duration: number) => void
   ) => {
     setMessages((prevMessages) => [
       ...prevMessages,
@@ -53,12 +53,17 @@ const SalesforceChatPage = () => {
     try {
       const fullUrl = new URL(apiUrl, window.location.origin);
       const searchParams = new URLSearchParams(fullUrl.search);
-      searchParams.set("User_Prompt", userPrompt);
+      searchParams.set('User_Prompt', userPrompt);
       const updatedApiUrl = `${fullUrl.origin}${fullUrl.pathname}?${searchParams.toString()}`;
 
       const response = await fetch(updatedApiUrl);
+      if (!response.ok) {
+        throw new Error(
+          `Server is busy. Please try again.`
+        );
+      }
       const data = await response.json();
-      const aiResponse: string = data?.Final_Answer || "No response.";
+      const aiResponse: string = data?.Final_Answer || 'No response.';
 
       const endTime = Date.now();
       const responseTime = endTime - startTime;
@@ -68,13 +73,16 @@ const SalesforceChatPage = () => {
         ...prevMessages,
         { text: aiResponse, isUser: false },
       ]);
-    } catch (error) {
-      console.error("Error sending message:", error);
+    } catch (error: any) {
+      console.error('Error sending message:', error);
       setMessages((prevMessages) => [
         ...prevMessages,
-        { text: "Failed to get response.", isUser: false },
+        {
+          text:
+            error.message || 'Server is busy. Please try again.',
+          isUser: false,
+        },
       ]);
-      // setLoadingDuration(3000);
     }
   };
 
@@ -98,7 +106,7 @@ const SalesforceChatPage = () => {
 
   const handleAISubmit = async (
     userPrompt: string,
-    setLoadingDuration: (duration: number) => void,
+    setLoadingDuration: (duration: number) => void
   ) => {
     await simulateResponse(userPrompt, setLoadingDuration); // Add await here
     setChipText(null);
@@ -127,7 +135,6 @@ const SalesforceChatPage = () => {
         </div>
       </div>
       <main className="mx-auto flex w-full max-w-4xl flex-grow flex-col p-4 relative">
-
         <Card className="flex flex-grow flex-col mt-2">
           <CardContent className="flex flex-grow flex-col p-6">
             <div
@@ -143,7 +150,7 @@ const SalesforceChatPage = () => {
                   <div key={index} className="mb-2">
                     <BotMessage text={message.text} />
                   </div>
-                ),
+                )
               )}
             </div>
           </CardContent>
@@ -170,7 +177,7 @@ const SalesforceChatPage = () => {
           </div>
           <AIInputWithLoading
             onSubmit={handleAISubmit}
-            placeholder={chipText || "Type a message..."}
+            placeholder={chipText || 'Type a message...'}
             chipText={chipText}
           />
         </div>

@@ -11,6 +11,8 @@ import Snowflake from "@/public/snowflake.svg";
 import Kafka from "@/public/kafka.svg";
 import Postgresql from "@/public/postgresql.svg";
 import AwsRedshift from "@/public/aws-redshift.svg";
+import Informatica from "@/public/informatica.svg";
+
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -47,7 +49,7 @@ export function AnimatedBeamMultipleOutput({
   return (
     <div
       className={cn(
-        "relative flex h-[300px] w-full max-w-[350px] items-center justify-center overflow-hidden p-10",
+        "relative flex h-[300px] w-full max-w-[350px] items-center justify-center overflow-hidden ",
         className,
       )}
       ref={containerRef}
@@ -55,8 +57,11 @@ export function AnimatedBeamMultipleOutput({
       <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
         <div className="flex flex-col justify-center">
           <Circle ref={div6Ref} className="size-12">
-            <Database className="text-black" />
+            <Image src={Informatica} alt="Informatica" width={34} height={34} />
           </Circle>
+          <p className="text-center text-xs mt-1 ">
+              Data Integration, Profiling, and Quality
+            </p>
         </div>
         <div className="flex flex-col justify-center gap-2">
           <Circle ref={div1Ref}>
@@ -75,7 +80,11 @@ export function AnimatedBeamMultipleOutput({
             <Image src={AwsRedshift} alt="AwsRedshift" width={34} height={34} />
           </Circle>
         </div>
+        
       </div>
+      <p className="text-center text-xs mt-1 ">
+              AI insights, Data validation, ingestion and replication
+            </p>
 
       {/* AnimatedBeams */}
       <AnimatedBeam
