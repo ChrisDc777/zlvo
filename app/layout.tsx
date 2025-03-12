@@ -7,6 +7,7 @@ import Navbar from "@/components/sections/navbar/default";
 import { AuthProvider } from "./context/AuthProvider";
 // import { AuthProvider } from "./context/AuthProvider";
 import { ReactLenis } from "@/lib/lenis";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: {
@@ -67,18 +68,26 @@ export default function RootLayout({
 }>) {
   const protectedRoutes = ["/protected", "/dashboard", "/settings"];
 
+  
   return (
     // <AuthProvider>
     <AuthProvider>
       <ReactLenis root>
-      <html lang="en" style={{ colorScheme: "dark" }} className="dark">
-        <body className={`${inter.className} bg-background antialiased`}>
-          <Navbar />
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
+        <html lang="en" style={{ colorScheme: "dark" }} className="dark">
+          <body className={`${inter.className} bg-background antialiased`}>
+            <Toaster
+              position="top-center"
+              reverseOrder={false}
+            />
+            <div>
+              
+            </div>
+            <Navbar />
+            <ThemeProvider>
+              {children}
+            </ThemeProvider>
+          </body>
+        </html>
       </ReactLenis>
     </AuthProvider>
     // </AuthProvider>

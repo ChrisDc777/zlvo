@@ -15,6 +15,8 @@ import { DemoHeroGeometric } from "@/components/kokonut/Hero";
 import { DataDigitizationFlow } from "@/components/animatedTabs";
 import { AnimatedBeamUni } from "@/components/magicui/AnimatedBeamUni";
 import { AnimatedBeamMultipleOutput } from "@/components/magicui/AnimatedBeamMultiple";
+import toast from "react-hot-toast";
+import { useEffect } from "react";
 
 export default function Home() {
   return (
@@ -36,7 +38,7 @@ export default function Home() {
       {/* <Logos /> */}
       
 
-      <Pricing />
+      {/* <Pricing /> */}
       {/* <TextRevealCardPreview /> */}
       
       {/* <FAQ /> */}

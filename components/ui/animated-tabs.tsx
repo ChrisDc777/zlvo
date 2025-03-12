@@ -13,6 +13,8 @@ import Image from "next/image";
 import { AnimatedBeamUni } from "@/components/magicui/AnimatedBeamUni";
 import { AnimatedBeamMultipleOutput } from "@/components/magicui/AnimatedBeamMultiple";
 import { ArrowRightIcon, ChevronRight } from "lucide-react";
+import Dig1 from "@/public/digitization/DigitizationV1.png";
+import Dig2 from "@/public/digitization/DigitizationV2.png";
 
 interface Tab {
   id: string;
@@ -30,112 +32,30 @@ interface AnimatedTabsProps {
 
 const defaultTabs: Tab[] = [
   {
-    id: "retail",
-    label: "Retail",
-    content: (
-      <div className="flex flex-col items-center justify-center w-full h-full">
-        <h3 className="text-lg font-semibold text-gray-300 mb-4">
-          Retail Data Flow
-        </h3>
-        <div className="flex w-full justify-between">
-          {/* Transcripts Section */}
-          <div className="flex-1 flex flex-col items-center">
-            <span className="text-sm text-gray-500">Transcripts</span>
-            <Image
-              src={stationaryPic}
-              alt="Stationary Transcripts"
-              className="h-48 object-contain rounded-md"
-            />
-            <AnimatedBeamUni />
-            {/* <span className="text-sm text-gray-500 mt-4">
-              Transcripts Processing from handwitten notes to Gemini to Informatica
-            </span> */}
-          </div>
-
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex flex-row text-slate-400">
-              <ChevronRight className="h-8 w-16 mr-[-10px]" />
-              <ChevronRight className="h-8 w-16 mr-[-10px]" />
-              <ChevronRight className="h-8 w-16 mr-[-10px]" />
-              <ChevronRight className="h-8 w-16" />
-            </div>
-            {/* <ArrowRightIcon className="h-8 w-16 text-gray-300" /> */}
-            <span className="text-sm text-gray-500 mt-4">
-              Converted to a CSV table for further processing
-            </span>
-          </div>
-
-          {/* CSV Data Section */}
-          <div className="flex-1 flex flex-col items-center">
-            <span className="text-sm text-gray-500">CSV Data</span>
-            <Image
-              src={stationaryCsv}
-              alt="Stationary CSV Data"
-              className="h-48 object-contain rounded-md"
-            />
-            <AnimatedBeamMultipleOutput />
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
     id: "healthcare",
     label: "Healthcare",
     content: (
       <div className="flex flex-col items-center justify-center w-full h-full">
-        <h3 className="text-lg font-semibold text-gray-300 mb-4">
-          Healthcare Data Flow
-        </h3>
-        <div className="flex w-full justify-between">
-          {/* Transcripts Section */}
-          <div className="flex-1 flex flex-col items-center">
-            <span className="text-sm text-gray-500">Transcripts</span>
-            <div className="flex flex-row p-16 md:p-4 sm:p-0">
-              <Image
-                src={healthPic1}
-                alt="Healthcare Transcripts 1"
-                className="h-32 object-contain rounded-md"
-              />
-              <Image
-                src={healthPic2}
-                alt="Healthcare Transcripts 2"
-                className="h-32 object-contain rounded-md"
-              />
-              <Image
-                src={healthPic3}
-                alt="Healthcare Transcripts 3"
-                className="h-32 object-contain rounded-md"
-              />
-            </div>
-            <AnimatedBeamUni />
-            {/* <span className="text-sm text-gray-500 mt-4">
-              Transcripts Processing from handwitten notes to Gemini to Informatica
-            </span> */}
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex flex-row text-slate-400">
-              <ChevronRight className="h-8 w-16 mr-[-10px]" />
-              <ChevronRight className="h-8 w-16 mr-[-10px]" />
-              <ChevronRight className="h-8 w-16 mr-[-10px]" />
-              <ChevronRight className="h-8 w-16" />
-            </div>
-            {/* <ArrowRightIcon className="h-8 w-16 text-gray-300" /> */}
-            <span className="text-sm text-gray-500 mt-4">
-              Converted and stored in Database
-            </span>
-          </div>
-          {/* CSV Data Section */}
-          <div className="flex-1 flex flex-col items-center">
-            <span className="text-sm text-gray-500">CSV Data</span>
-            <Image
-              src={healthCsv}
-              alt="Healthcare CSV Data"
-              className="h-48 object-contain rounded-md"
-            />
-            <AnimatedBeamMultipleOutput />
-          </div>
-        </div>
+        {/* <h3 className="text-lg font-semibold text-gray-300 mb-4">Dig1</h3> */}
+        <Image
+          src={Dig1}
+          alt="Digitization V1"
+          className="h-auto object-contain rounded-md"
+        />
+      </div>
+    ),
+  },
+  {
+    id: "retail",
+    label: "Retail",
+    content: (
+      <div className="flex flex-col items-center justify-center w-full h-full">
+        {/* <h3 className="text-lg font-semibold text-gray-300 mb-4">Dig2</h3> */}
+        <Image
+          src={Dig2}
+          alt="Digitization V2"
+          className="h-auto object-contain rounded-md"
+        />
       </div>
     ),
   },
@@ -148,7 +68,9 @@ const defaultTabs: Tab[] = [
           E-commerce Data Flow
         </h3>
         <div className="flex w-full justify-between">
-          {/* Transcripts Section */}
+          {
+            /* Transcripts Section */
+          }
           <div className="flex-1 flex flex-col items-center">
             <span className="text-sm text-gray-500">Transcripts</span>
             <img
@@ -159,7 +81,9 @@ const defaultTabs: Tab[] = [
             <AnimatedBeamUni />
           </div>
 
-          {/* CSV Data Section */}
+          {
+            /* CSV Data Section */
+          }
           <div className="flex-1 flex flex-col items-center">
             <span className="text-sm text-gray-500">CSV Data</span>
             <img
@@ -173,16 +97,29 @@ const defaultTabs: Tab[] = [
       </div>
     ),
     disabled: true,
+    dummy: true,
   },
   {
-    id: "dummy1",
-    label: "And Much",
+    id: "banking",
+    label: "Banking & Finance",
     content: <></>,
     dummy: true,
   },
   {
-    id: "dummy2",
-    label: "More...",
+    id: "education",
+    label: "Education",
+    content: <></>,
+    dummy: true,
+  },
+  {
+    id: "energy",
+    label: "Energy & Utilities",
+    content: <></>,
+    dummy: true,
+  },
+  {
+    id: "insurance",
+    label: "Insurance",
     content: <></>,
     dummy: true,
   },
@@ -211,41 +148,43 @@ const AnimatedTabs = ({
         className
       )}
     >
-      <div className="flex gap-2 flex-wrap bg-gradient-to-br from-gray-800 to-black bg-opacity-70 backdrop-blur-md p-2 rounded-xl shadow-md">
-        {tabs.map((tab) =>
-          tab.dummy ? (
-            // Render dummy tab
-            <div
-              key={tab.id}
-              className={cn(
-                "px-4 py-2 text-sm font-medium rounded-lg text-gray-300 bg-gray-800 bg-opacity-50 cursor-not-allowed",
-                "opacity-50"
-              )}
-            >
-              <span className="relative z-10">{tab.label}</span>
-            </div>
-          ) : (
-            // Render interactive tab
-            <button
-              key={tab.id}
-              onClick={() => handleTabClick(tab.id)}
-              disabled={tab.disabled}
-              className={cn(
-                "relative px-4 py-2 text-sm font-medium rounded-lg text-gray-200 outline-none transition-colors hover:bg-gray-700",
-                tab.disabled && "opacity-50 cursor-not-allowed"
-              )}
-            >
-              {activeTab === tab.id && (
-                <motion.div
-                  layoutId="active-tab"
-                  className="absolute inset-0 bg-gray-600 bg-opacity-50 shadow-[0_0_15px_rgba(0,0,0,0.3)] backdrop-blur-sm !rounded-lg"
-                  transition={{ type: "spring", duration: 0.5 }}
-                />
-              )}
-              <span className="relative z-10">{tab.label}</span>
-            </button>
-          )
-        )}
+      <div className="flex justify-center items-center bg-gradient-to-br from-gray-800 to-black bg-opacity-70 backdrop-blur-md p-2 rounded-xl shadow-md">
+        <div className="flex gap-2 flex-wrap">
+          {tabs.map((tab) =>
+            tab.dummy ? (
+              // Render dummy tab
+              <div
+                key={tab.id}
+                className={cn(
+                  "px-4 py-2 text-sm font-medium rounded-lg text-gray-300 bg-gray-800 bg-opacity-50 cursor-not-allowed",
+                  "opacity-50"
+                )}
+              >
+                <span className="relative z-10">{tab.label}</span>
+              </div>
+            ) : (
+              // Render interactive tab
+              <button
+                key={tab.id}
+                onClick={() => handleTabClick(tab.id)}
+                disabled={tab.disabled}
+                className={cn(
+                  "relative px-4 py-2 text-sm font-medium rounded-lg text-gray-200 outline-none transition-colors hover:bg-gray-700",
+                  tab.disabled && "opacity-50 cursor-not-allowed"
+                )}
+              >
+                {activeTab === tab.id && (
+                  <motion.div
+                    layoutId="active-tab"
+                    className="absolute inset-0 bg-gray-600 bg-opacity-50 shadow-[0_0_15px_rgba(0,0,0,0.3)] backdrop-blur-sm !rounded-lg"
+                    transition={{ type: "spring", duration: 0.5 }}
+                  />
+                )}
+                <span className="relative z-10">{tab.label}</span>
+              </button>
+            )
+          )}
+        </div>
       </div>
 
       <div

@@ -125,17 +125,18 @@ export default async function Navbar() {
                     >
                       Getting Started
                     </a> */}
-                    {/* <a
-                      href={siteConfig.chat}
-                      className="text-muted-foreground hover:text-foreground"
-                    >
-                      chat
-                    </a> */}
+                    
                     <a
                       href={siteConfig.dashboard}
                       className="text-muted-foreground hover:text-foreground"
                     >
                       Dashboard
+                    </a>
+                    <a
+                      href={siteConfig.extract}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      extract
                     </a>
                   </nav>
                 </SheetContent>

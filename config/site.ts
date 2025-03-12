@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "Smart structuring",
   url: process.env.KINDE_SITE_URL || "http://localhost:3000", // Provide a default
+  extract: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/extract`,
   chat: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/dashboard`,
   dashboard: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/dashboard`,
   journal: `${process.env.KINDE_SITE_URL || "http://localhost:3000"}/journal`,
