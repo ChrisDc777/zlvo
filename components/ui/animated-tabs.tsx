@@ -3,16 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import healthCsv from "@/public/imgExample/healthcareCsv.jpg";
-import healthPic1 from "@/public/imgExample/healthcarePic1.jpg";
-import healthPic2 from "@/public/imgExample/healthcarePic2.jpg";
-import healthPic3 from "@/public/imgExample/healthcarePic3.jpg";
-import stationaryPic from "@/public/imgExample/stationaryPic.jpg";
-import stationaryCsv from "@/public/imgExample/stationaryCsv.jpg";
 import Image from "next/image";
-import { AnimatedBeamUni } from "@/components/magicui/AnimatedBeamUni";
-import { AnimatedBeamMultipleOutput } from "@/components/magicui/AnimatedBeamMultiple";
-import { ArrowRightIcon, ChevronRight } from "lucide-react";
 import Dig1 from "@/public/digitization/DigitizationV1.png";
 import Dig2 from "@/public/digitization/DigitizationV2.png";
 
@@ -78,7 +69,6 @@ const defaultTabs: Tab[] = [
               alt="E-commerce Transcripts"
               className="h-48 object-contain rounded-md"
             />
-            <AnimatedBeamUni />
           </div>
 
           {
@@ -91,7 +81,6 @@ const defaultTabs: Tab[] = [
               alt="E-commerce CSV Data"
               className="h-48 object-contain rounded-md"
             />
-            <AnimatedBeamMultipleOutput />
           </div>
         </div>
       </div>
