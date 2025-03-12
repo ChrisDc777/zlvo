@@ -8,23 +8,15 @@ import {
 } from "../../ui/navbar";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../../ui/sheet";
 import { Menu } from "lucide-react";
-import LaunchUI from "../../logos/launch-ui";
 import { siteConfig } from "@/config/site";
 import { GradientButton } from "@/components/ui/gradient-button";
-// import {
-//   RegisterLink,
-//   LoginLink,
-// } from "@kinde-oss/kinde-auth-nextjs/components";
-// import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-// import logoImg from "@/public/pixil-frame.png";
-// import Image from "next/image";
-import { useUser } from "@clerk/nextjs";
+
 import {
   RegisterLink,
   LoginLink,
