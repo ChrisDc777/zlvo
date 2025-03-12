@@ -39,8 +39,9 @@ export default function PrescriptionUploader() {
     });
 
     try {
+      console.log(process.env.NEXT_PUBLIC_FASTAPI_API_URL);
       const response = await fetch(
-        `${process.env.NEXT_FASTAPI_API_URL}/extract_prescriptions/`, // Replace with your API endpoint
+        `${process.env.NEXT_PUBLIC_FASTAPI_API_URL}/extract_prescriptions/`, // Replace with your API endpoint
         {
           method: "POST",
           body: formData,
