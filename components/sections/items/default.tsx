@@ -11,7 +11,6 @@ import {
 import { Item, ItemIcon, ItemTitle, ItemDescription } from "../../ui/item";
 import { Section } from "../../ui/section";
 import { FeaturesSectionWithHoverEffects } from "@/components/feature-section-with-hover-effects";
-import { TrueFocusComponent } from "@/components/TrueFocusComponent";
 
 export default function Items() {
   return (
@@ -28,7 +27,6 @@ export default function Items() {
           <FeaturesSectionWithHoverEffects />
           {/* </div> */}
         </div>
-        <TrueFocusComponent/>
         {/* <div className="grid auto-rows-fr grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
           <Item>
             <ItemTitle className="flex items-center gap-2">
