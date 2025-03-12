@@ -4,9 +4,10 @@ import { inter } from "@/lib/fonts";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { siteConfig } from "../config/site";
 import Navbar from "@/components/sections/navbar/default";
-import { ClerkProvider } from "@clerk/nextjs";
+import { AuthProvider } from "./context/AuthProvider";
 // import { AuthProvider } from "./context/AuthProvider";
 import { ReactLenis } from "@/lib/lenis";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: {
@@ -67,20 +68,28 @@ export default function RootLayout({
 }>) {
   const protectedRoutes = ["/protected", "/dashboard", "/settings"];
 
+  
   return (
     // <AuthProvider>
-    <ClerkProvider>
+    <AuthProvider>
       <ReactLenis root>
-      <html lang="en" style={{ colorScheme: "dark" }} className="light">
-        <body className={`${inter.className} bg-background antialiased`}>
-          <Navbar />
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
+        <html lang="en" style={{ colorScheme: "dark" }} className="dark">
+          <body className={`${inter.className} bg-background antialiased`}>
+            <Toaster
+              position="top-center"
+              reverseOrder={false}
+            />
+            <div>
+              
+            </div>
+            <Navbar />
+            <ThemeProvider>
+              {children}
+            </ThemeProvider>
+          </body>
+        </html>
       </ReactLenis>
-    </ClerkProvider>
+    </AuthProvider>
     // </AuthProvider>
   );
 }

@@ -153,13 +153,13 @@ html.lenis body {
 }
 
 ::selection {
-  background-color: rgb(55, 133, 234);
-  color: azure;
+  background-color: azure;
+  color:#2980b9;
 }
 
 ::-moz-selection {
-  background-color: rgb(55, 133, 234);
-  color: azure;
+  background-color: azure;
+  color:#2980b9;
 }
 
 

@@ -20,40 +20,41 @@ export default function Hero() {
       src = "/app-light.png";
       break;
     case "dark":
-      src = "/app-dark.png";
+      src = "/chatInterface.png";
       break;
     default:
-      src = "/app-dark.png";
+      src = "/chatInterface.png";
       break;
   }
 
   return (
-    <Section className="fade-bottom overflow-hidden pb-0 sm:pb-0 md:pb-0">
+    <Section className="group relative overflow-hidden">
       <div className="mx-auto flex max-w-container flex-col gap-12 pt-16 sm:gap-24">
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
           <Badge variant="outline" className="animate-appear">
             <span className="text-muted-foreground">
-              New AI-powered Health Assistant is live!
+              Tired of manual data entry?
             </span>
             <a
               href={siteConfig.getStartedUrl}
               className="flex items-center gap-1"
             >
-              Get started
+              Digitize Now
               <ArrowRightIcon className="h-3 w-3" />
             </a>
           </Badge>
           <h1 className="relative z-10 inline-block animate-appear bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-4xl font-semibold leading-tight text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight">
-            Transform the way you care for your health with AI
+            Turn Handwritten Records into Actionable Data
           </h1>
           <p className="text-md relative z-10 max-w-[550px] animate-appear font-medium text-muted-foreground opacity-0 delay-100 sm:text-xl">
-            Empower yourself with personalized health insights, symptom
-            checking, and expert recommendations—all at your fingertips.
+          Convert images of your handwritten records into digital tables, ready for analysis and integration with systems like Snowflake. Ideal for businesses that manage a lot of paper records.
           </p>
           <div className="relative z-10 flex animate-appear justify-center gap-4 opacity-0 delay-300">
             <div className="relative z-10 flex animate-appear justify-center gap-4 opacity-0 delay-300">
               <Button variant="default" size="lg" asChild>
-                <a href={siteConfig.getStartedUrl}>Start Your Health Journey</a>
+                <a href={siteConfig.getStartedUrl}>
+                  Start Digitizing Your Records
+                </a>
               </Button>
               <Button variant="secondary" size="lg" asChild>
                 <a href={siteConfig.links.github}>
@@ -82,6 +83,9 @@ export default function Hero() {
             />
           </div>
         </div>
+        {/* <div className="absolute left-0 top-0 h-full w-full translate-y-[1rem] opacity-80 transition-all duration-500 ease-in-out group-hover:translate-y-[-2rem] group-hover:opacity-100">
+          <Glow variant="bottom" />
+        </div> */}
       </div>
     </Section>
   );

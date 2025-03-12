@@ -1,5 +1,3 @@
-"use client"
-
 // import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import Navigation from "../../ui/navigation";
 import { Button } from "../../ui/button";
@@ -24,20 +22,21 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logoImg from "@/public/pixil-frame.png";
-import Image from "next/image";
+// import logoImg from "@/public/pixil-frame.png";
+// import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 import {
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs'
+  RegisterLink,
+  LoginLink,
+  LogoutLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-export default function Navbar() {
-  const { isSignedIn, user, isLoaded } = useUser()
-  console.log(user);
+export default async function Navbar() {
+  const { getUser, isAuthenticated } = getKindeServerSession();
+  const user = await getUser();
+  const isUserAuthenticated = await isAuthenticated();
+
   // const { getUser, isAuthenticated } = getKindeServerSession();
   // const user = await getUser();
 
@@ -55,37 +54,50 @@ export default function Navbar() {
               className="flex items-center gap-2 text-xl font-bold"
             >
               {/* <LaunchUI /> */}
-              <Image
+              {/* <Image
                 src={logoImg}
-                alt="Togthr Logo"
+                alt="winged Logo"
                 width={140}
                 height={30}
                 style={{ marginBottom: "6px" }}
-              />
-              {/* <h1>Togthr</h1> */}
+              /> */}
+              <h1>🕊️ Smart Structuring</h1>
+              <span className="ml-1 text-xs text-blue-400">by Team Winged</span>
             </a>
-            <Navigation isAuthenticated={isSignedIn} />
+            <Navigation isAuthenticated={isUserAuthenticated} />
           </NavbarLeft>
           <NavbarRight>
-            <SignedOut>
-              <SignInButton />
-              <GradientButton variant="variant" asChild>
-                <SignUpButton />
-              </GradientButton>
-            </SignedOut>
-            
-            <SignedIn>
-            {/* <Button
+            {isUserAuthenticated ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
                     variant="ghost"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-gray-800 to-gray-700 text-gray-200 transition-colors duration-300 hover:from-gray-900 hover:to-gray-800 hover:text-gray-100"
                   >
-                    {user?.fullName
-                      ? user.fullName.charAt(0).toUpperCase()
+                    {user?.given_name
+                      ? user.given_name.charAt(0).toUpperCase()
                       : "?"}
-                  </Button> */}
-              <UserButton />
-            </SignedIn>
-            
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem>
+                    <LogoutLink className="block w-full text-base">
+                      Log Out
+                    </LogoutLink>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                <LoginLink className="text-md hidden md:block">
+                  Sign in
+                </LoginLink>
+                <GradientButton variant="variant" asChild>
+                  <RegisterLink>Sign up</RegisterLink>
+                </GradientButton>
+              </>
+            )}
+
             <Sheet>
               <SheetTrigger asChild>
                 <Button
@@ -104,7 +116,7 @@ export default function Navbar() {
                       href={siteConfig.url}
                       className="flex items-center gap-2 text-xl font-bold"
                     >
-                      <span>Togthr</span>
+                      <span>🕊️ Team Winged</span>
                     </a>
 
                     {/* <a
@@ -113,17 +125,18 @@ export default function Navbar() {
                     >
                       Getting Started
                     </a> */}
-                    <a
-                      href={siteConfig.chat}
-                      className="text-muted-foreground hover:text-foreground"
-                    >
-                      chat
-                    </a>
+                    
                     <a
                       href={siteConfig.dashboard}
                       className="text-muted-foreground hover:text-foreground"
                     >
                       Dashboard
+                    </a>
+                    <a
+                      href={siteConfig.extract}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      extract
                     </a>
                   </nav>
                 </SheetContent>
